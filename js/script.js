@@ -40,7 +40,7 @@ const team = [
         tName : "Walter",
         tSurname : "Gordon",
         tRole : "Office Manager",
-        tImg : "../walter-gordon-office-manager.jpg",
+        tImg : "../img/walter-gordon-office-manager.jpg",
         tAlt : "Walter"
     },
     {
@@ -65,9 +65,10 @@ const team = [
         tAlt : "Barbara"
     }
 ]
-const teamBox = document.querySelector('.row');
+
 
 function createCard(name, surname, role, srcImg, alt){
+    const teamBox = document.querySelector('.row');
     const col = document.createElement('div');
     col.classList.add('col-4');
 
@@ -89,12 +90,11 @@ function createCard(name, surname, role, srcImg, alt){
     cardRole.innerText = role;
 
     card.append(img,cardName,cardRole);
+    teamBox.append(card);
 }
 
 
 
 for (let i = 0; i < team.length; i++){
-    console.log(team[i]);
-    teamBox.innerHTML += createCard(team[i].tName, team[i].tSurname, team[i].tRole, team[i].tImg, team[i].tAlt);
-    // `<p> nome : ${team[i].tName} cognome: ${team[i].tSurname} ruolo: ${team[i].tRole} immagine : ${team[i].tImg} </p>`
+    createCard(team[i].tName, team[i].tSurname, team[i].tRole, team[i].tImg, team[i].tAlt);
 }
