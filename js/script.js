@@ -19,15 +19,6 @@ Organizzare i singoli membri in card/schede
 */
 
 
-`
-<div class="col-4">
-<div class="card mb-5 border-0">
-    <img src="./img/wayne-barnett-founder-ceo.jpg" alt="wayne">
-    <h2 class="text-center text-secondary fs-5 mt-4">Wayne Barnett</h2>
-    <p class="text-center text-secondary">Founder & CEO</p>
-</div>
-</div>
-`
 
 // team array
 const team = [
@@ -35,42 +26,75 @@ const team = [
         tName : "Wayne",
         tSurname : "Barnett",
         tRole : "Founder & CEO",
-        tImg : "../img/wayne-barnett-founder-ceo.jpg"
+        tImg : "../img/wayne-barnett-founder-ceo.jpg",
+        tAlt : "Wayne"
     },
     {
         tName : "Angela",
         tSurname : "Caroll",
         tRole : "Chief Editor",
-        tImg : "../img/angela-caroll-chief-editor.jpg"
+        tImg : "../img/angela-caroll-chief-editor.jpg",
+        tAlt : "Angela"
     },
     {
         tName : "Walter",
         tSurname : "Gordon",
         tRole : "Office Manager",
-        tImg : "../walter-gordon-office-manager.jpg"
+        tImg : "../walter-gordon-office-manager.jpg",
+        tAlt : "Walter"
     },
     {
         tName : "Angela",
         tSurname : "Lopez",
         tRole : "Social Media Manager",
-        tImg : "../img/angela-lopez-social-media-manager.jpg"
+        tImg : "../img/angela-lopez-social-media-manager.jpg",
+        tAlt : "Angela"
     },
     {
         tName : "Scott",
         tSurname : "Estrada",
         tRole : "Developer",
-        tImg : "../img/scott-estrada-developer.jpg"
+        tImg : "../img/scott-estrada-developer.jpg",
+        tAlt : "Scott"
     },
     {
         tName : "Barbara",
         tSurname : "Ramos",
         tRole : "Graphic Designer",
-        tImg : "../img/barbara-ramos-graphic-designer.jpg"
+        tImg : "../img/barbara-ramos-graphic-designer.jpg",
+        tAlt : "Barbara"
     }
 ]
 const teamBox = document.querySelector('.row');
 
+function createCard(name, surname, role, srcImg, alt){
+    const col = document.createElement('div');
+    col.classList.add('col-4');
+
+    const card = document.createElement('div');
+    card.classList.add('card', 'mb-5', 'border-0');
+
+    col.append(card);
+
+    const img = document.createElement('img');
+    img.src = srcImg;
+    img.alt = alt;
+
+    const cardName = document.createElement('h2');
+    cardName.classList.add('text-center', 'text-secondary', 'fs-5', 'mt-4');
+    cardName.innerText = name + surname;
+
+    const cardRole = document.createElement('p');
+    cardRole.classList.add('text-center', 'text-secondary');
+    cardRole.innerText = role;
+
+    card.append(img,cardName,cardRole);
+}
+
+
+
 for (let i = 0; i < team.length; i++){
     console.log(team[i]);
-    teamBox.innerHTML += `<p> nome : ${team[i].tName} cognome: ${team[i].tSurname} ruolo: ${team[i].tRole} immagine : ${team[i].tImg} </p>`
+    teamBox.innerHTML += createCard(team[i].tName, team[i].tSurname, team[i].tRole, team[i].tImg, team[i].tAlt);
+    // `<p> nome : ${team[i].tName} cognome: ${team[i].tSurname} ruolo: ${team[i].tRole} immagine : ${team[i].tImg} </p>`
 }
