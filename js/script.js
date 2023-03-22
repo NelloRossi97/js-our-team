@@ -27,3 +27,13 @@ Angela   Lopez	    Social Media Manager	  angela-lopez-social-media-manager.jpg
 Scott    Estrada	Developer	              scott-estrada-developer.jpg
 Barbara  Ramos	    Graphic Designer	      barbara-ramos-graphic-designer.jpg
 */
+
+`
+<div class="col-4">
+<div class="card mb-5 border-0">
+    <img src="./img/wayne-barnett-founder-ceo.jpg" alt="wayne">
+    <h2 class="text-center text-secondary fs-5 mt-4">Wayne Barnett</h2>
+    <p class="text-center text-secondary">Founder & CEO</p>
+</div>
+</div>
+`
