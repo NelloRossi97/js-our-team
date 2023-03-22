@@ -18,15 +18,6 @@ BONUS 2:
 Organizzare i singoli membri in card/schede
 */
 
-/* 
-NAME     SURNAME    ROLE                      IMAGE
-Wayne    Barnett	Founder & CEO	          wayne-barnett-founder-ceo.jpg
-Angela   Caroll	    Chief Editor	          angela-caroll-chief-editor.jpg
-Walter   Gordon	    Office Manager	          walter-gordon-office-manager.jpg
-Angela   Lopez	    Social Media Manager	  angela-lopez-social-media-manager.jpg
-Scott    Estrada	Developer	              scott-estrada-developer.jpg
-Barbara  Ramos	    Graphic Designer	      barbara-ramos-graphic-designer.jpg
-*/
 
 `
 <div class="col-4">
@@ -37,3 +28,41 @@ Barbara  Ramos	    Graphic Designer	      barbara-ramos-graphic-designer.jpg
 </div>
 </div>
 `
+const team = [
+    {
+        tName : "Wayne",
+        tSurname : "Barnett",
+        tRole : "Founder & CEO",
+        tImg : "../img/wayne-barnett-founder-ceo.jpg"
+    },
+    {
+        tName : "Angela",
+        tSurname : "Caroll",
+        tRole : "Chief Editor",
+        tImg : "../img/angela-caroll-chief-editor.jpg"
+    },
+    {
+        tName : "Walter",
+        tSurname : "Gordon",
+        tRole : "Office Manager",
+        tImg : "../walter-gordon-office-manager.jpg"
+    },
+    {
+        tName : "Angela",
+        tSurname : "Lopez",
+        tRole : "Social Media Manager",
+        tImg : "../img/angela-lopez-social-media-manager.jpg"
+    },
+    {
+        tName : "Scott",
+        tSurname : "Estrada",
+        tRole : "Developer",
+        tImg : "../img/scott-estrada-developer.jpg"
+    },
+    {
+        tName : "Barbara",
+        tSurname : "Ramos",
+        tRole : "Graphic Designer",
+        tImg : "../img/barbara-ramos-graphic-designer.jpg"
+    }
+]
