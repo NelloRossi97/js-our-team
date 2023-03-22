@@ -90,7 +90,7 @@ function createCard(name, surname, role, srcImg, alt){
     cardRole.innerText = role;
 
     card.append(img,cardName,cardRole);
-    teamBox.append(card);
+    teamBox.append(col);
 }
 
 
