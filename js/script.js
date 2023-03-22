@@ -1,13 +1,13 @@
 /* 
-Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
+X Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
 
-Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
+X Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
 
 MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite.
+X Creare l’array di oggetti con le informazioni fornite.
 
 MILESTONE 1:
-Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+X Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
 MILESTONE 2:
 Stampare le stesse informazioni su DOM sottoforma di stringhe
@@ -28,6 +28,8 @@ Organizzare i singoli membri in card/schede
 </div>
 </div>
 `
+
+// team array
 const team = [
     {
         tName : "Wayne",
@@ -66,3 +68,9 @@ const team = [
         tImg : "../img/barbara-ramos-graphic-designer.jpg"
     }
 ]
+const teamBox = document.querySelector('.row');
+
+for (let i = 0; i < team.length; i++){
+    console.log(team[i]);
+    teamBox.innerHTML += `<p> nome : ${team[i].tName} cognome: ${team[i].tSurname} ruolo: ${team[i].tRole} immagine : ${team[i].tImg} </p>`
+}
