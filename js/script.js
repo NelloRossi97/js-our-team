@@ -60,12 +60,75 @@ const team = [
     {
         tName : "Barbara",
         tSurname : "Ramos",
-        tRole : "Graphic Designer",
+        tRole : "Developer",
         tImg : "../img/barbara-ramos-graphic-designer.jpg",
         tAlt : "Barbara"
     }
 ]
 
-for (let i = 0; i < team.length; i++){
-    createCard(team[i].tName, team[i].tSurname, team[i].tRole, team[i].tImg, team[i].tAlt);
+function createCard(obj){
+    const teamBox = document.querySelector('.row');
+    const col = document.createElement('div');
+    col.classList.add('col-4');
+
+    const card = document.createElement('div');
+    card.classList.add('card', 'mb-5', 'border-0');
+
+    col.append(card);
+
+    const img = document.createElement('img');
+    img.src = obj.tImg;
+    img.alt = obj.tAlt;
+
+    const cardName = document.createElement('h2');
+    cardName.classList.add('text-center', 'text-secondary', 'fs-5', 'mt-4');
+    cardName.innerText = obj.tName + obj.tSurname;
+
+    const cardRole = document.createElement('p');
+    cardRole.classList.add('text-center', 'text-secondary');
+    cardRole.innerText = obj.tRole;
+
+    card.append(img,cardName,cardRole);
+    teamBox.append(col);
 }
+
+function drawTeam(selectedValue){
+    document.querySelector('.row').innerHTML = "";
+    const filteredArray = team.filter( (value) =>{
+        //se il valore della select è uguale a quello filtrato
+        if (selectedValue === "all" || value.tRole === selectedValue){
+            return true;
+        } else{
+            return false;
+        }
+    })
+    // se l'elemento ha superato il test creo la card
+    filteredArray.forEach((value) => {
+        createCard(value);
+    })
+}
+
+function selectRole(){
+    drawTeam(this.value);
+}
+
+
+// for (let i = 0; i < team.length; i++){
+     // createCard(team[i].tName, team[i].tSurname, team[i].tRole, team[i].tImg, team[i].tAlt);
+
+// }
+
+const select = document.getElementById('selectRole');
+
+select.addEventListener('change', selectRole);
+
+drawTeam(select.value);
+
+
+
+
+// console.log(filteredArray);
+
+// filteredArray.forEach((value) => {
+//     createCard(value);
+// })
